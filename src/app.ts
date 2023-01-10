@@ -8,6 +8,6 @@ dotenv.config();       //dotenv init
 console.log("") //skips one line for better readability
 
 function InitCLI(){
-    console.log(checkArgument(process.argv))
+    checkArgument(process.argv)
 }
 InitCLI()

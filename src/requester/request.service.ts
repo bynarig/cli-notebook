@@ -1,43 +1,27 @@
-import {isNumberObject} from "util/types";
+import { logIn } from "./login.service.js"
 
 export function checkArgument(data: string[]) {
 
-    let argument = data.slice(2) // only arguments in this array
-    let response = ''       // response text
+    let argument = data[2] // only argument
 
-    if (argument[0].charAt(0) == "-") {
-        for (let i = 0; i < argument.length; i++) {      //func for counting args
-            if (argument[i].charAt(0) == "-") {
-                if (argument.length > i + 2 && argument[i + 1].charAt(0) != "-" && argument[i + 2].charAt(0) != "-") { //validation of args
-                    return "invalid arguments written"
-                }
-                switch (argument[i]) {
-                    case "-help":
-                        return getHelp();
-                    case "-login":
-                        return logIn(argument[i + 1]) // gets next argument to log in
-                    default:
-                        return `Argument with id:${i} is invalid, check your argument one more time` //searching argument in commands
-                }
-            }
+    if (argument?.charAt(0) == "-") {
+        switch (argument) {
+            case "-help":
+                return getHelp();
+            case "-login":
+                return logIn()
+            default:
+                return `Argument \"${argument}\" is invalid, check your argument one more time` //searching argument in commands
         }
     } else {
-        return "No arguments founded"
+        console.log("Something went wrong with args")
     }
-
-    return response
 }
 
 function getHelp() {
-    return "Here is your help"
+    console.log('Here is your help')
 }
 
 
-function logIn(name: string) {
-    if (name.charAt(0) != "-" && isNumberObject(name.charAt(0)) == false && name.charAt(0) != "_" && name.charAt(0) != "=") {
-        // NEED TO WRITE LOGIN LOGIC HERE
-        return "login completed"
-    }
-    return "invalid data for logging"
-}
+
 

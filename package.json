@@ -5,14 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node  dist/app.js -help"
+    "start": "node  dist/app.js -login"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.11.18",
+    "@types/prompts": "^2.4.2"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "inquirer": "^9.1.4",
+    "prompts": "^2.4.2"
   }
 }
