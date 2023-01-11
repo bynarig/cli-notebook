@@ -4,14 +4,20 @@ let file = editJsonFile(`${process.cwd()}/cache.json`);
 
 
 
-export function usernameNpasswordDeleter(){
-    file.set("name", "USERISLOGGEDOUT")
-    file.set("password", "USERISLOGGEDOUT")
-    console.log()
+export function usernameNpasswordDeleter(){ //logOUT for user P.S. changing name && password to undefined names
+    file.set("name", undefined)
+    file.set("password", undefined)
+    console.log("Successfully loggedOUT")
     file.save()
 }
 
 export function ISloggedIn(){
-    return file.get("name") != "USERISLOGGEDOUT" &&
-        file.get("password") != "USERISLOGGEDOUT";
+    return file.get("name") != undefined &&
+        file.get("password") != undefined;
+}
+
+export function setInCache(login: string, password: string){
+    file.set("name", login)
+    file.set("password", password)
+    file.save()
 }
