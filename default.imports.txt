@@ -1,0 +1,5 @@
+// IMPORTING JSON TO FILE
+
+import editJsonFile from "edit-json-file";
+let file = editJsonFile(`${process.cwd()}/cache.json`);
+

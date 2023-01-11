@@ -1,4 +1,4 @@
-import { logIn } from "./login.service.js"
+import {logIn, logOut} from "./loginout.service.js"
 
 export function checkArgument(data: string[]) {
 
@@ -10,6 +10,8 @@ export function checkArgument(data: string[]) {
                 return getHelp();
             case "-login":
                 return logIn()
+            case "-logout":
+                return logOut()
             default:
                 return `Argument \"${argument}\" is invalid, check your argument one more time` //searching argument in commands
         }
