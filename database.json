@@ -2,7 +2,8 @@
   "myname": {
     "password": "pass",
     "notes": {
-      "myNote": "This is my note"
+      "myNote": "This is my note",
+      "like": "Note content"
     }
   }
 }

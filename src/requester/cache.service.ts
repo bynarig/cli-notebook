@@ -16,7 +16,7 @@ export function ISloggedIn(){
         file.get("password") != undefined;
 }
 
-export function setInCache(login: string, password: string){
+export function setInCache(login: string, password: string){ //caching login and password in cache to skip login in next time
     file.set("name", login)
     file.set("password", password)
     file.save()

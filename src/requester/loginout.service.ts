@@ -20,7 +20,7 @@ export function logIn() {
                 validate: value => checkPassword(userNameChecker.login.toLowerCase(), value) && value.length >= 4 ? `Password < than 4 or no user found (you can create it by typing: CREATE_USER=${value})` : true,
             });
                 console.log("LOGGED")
-                setInCache(userNameChecker.login.toLowerCase(), userPasswordChecker.password)
+                setInCache(userNameChecker.login.toLowerCase(), userPasswordChecker.password) // caching all
         })();
     })();
 }
